@@ -197,4 +197,36 @@ public class ManagerStaffPartTime {
         displayPartTime();
         System.out.println("Sắp xếp thành công");
     }
+
+    public void displayByStatusON() {
+        for (StaffPartTime staffPT : staffPartTimes) {
+            if (staffPT.getStatus().equals("ON")) {
+                System.out.println(staffPT);
+            }
+        }
+    }
+
+    public void displayPayPartTime() {
+        for (StaffPartTime staffPT : staffPartTimes) {
+            if (staffPT.getWorkingHour() >= 120) {
+                System.out.println("ID " + staffPT.getId() + "| Tên " + staffPT.getName() + "| Lương " + staffPT.getHourSalary()*staffPT.getWorkingHour()*1.2+"VND");
+            } else if (staffPT.getWorkingHour() >= 100) {
+                System.out.println("ID " + staffPT.getId() + "| Tên " + staffPT.getName() + "| Lương " + staffPT.getHourSalary()*staffPT.getWorkingHour()*1.1+"VND");
+            } else {
+                System.out.println("ID " + staffPT.getId() + "| Tên " + staffPT.getName() + "| Lương " + staffPT.getHourSalary()*staffPT.getWorkingHour()+"VND");
+            }
+        }
+    }
+
+    public void checkStatus(int id) {
+        for (StaffPartTime s: staffPartTimes) {
+            if (s.getId() == id) {
+                if (s.getStatus().equals("ON")) {
+                    System.out.println("Đang làm việc");
+                } else {
+                    System.out.println("Đã nghỉ");
+                }
+            }
+        }
+    }
 }

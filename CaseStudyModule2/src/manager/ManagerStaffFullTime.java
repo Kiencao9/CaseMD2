@@ -206,8 +206,35 @@ public class ManagerStaffFullTime {
 
     public void displayByStatusON() {
         for (StaffFullTime staffFT : staffFullTimes) {
-            if (staffFT.getStatus().equals(1));
-            System.out.println(staffFT);
+            if (staffFT.getStatus().equals("ON")) {
+                System.out.println(staffFT);
+            }
+        }
+    }
+
+    public void displayPayFullTime() {
+        for (StaffFullTime staffFT : staffFullTimes) {
+            if (staffFT.getWorkingDay() >= 24) {
+                System.out.println("ID " + staffFT.getId() + "| Tên " + staffFT.getName() + "| Lương " + staffFT.getDailySalary()*staffFT.getWorkingDay()*1.2 +"VND");
+            } else if (staffFT.getWorkingDay() >= 20) {
+                System.out.println("ID " + staffFT.getId() + "| Tên " + staffFT.getName() + "| Lương " + staffFT.getDailySalary()*staffFT.getWorkingDay() +"VND");
+            } else if (staffFT.getWorkingDay() >= 15){
+                System.out.println("ID " + staffFT.getId() + "| Tên " + staffFT.getName() + "| Lương " + staffFT.getDailySalary()*staffFT.getWorkingDay()*0.8+"VND");
+            } else {
+                System.out.println("ID " + staffFT.getId() + "| Tên " + staffFT.getName() + "| Lương " + staffFT.getDailySalary()*staffFT.getWorkingDay()*0.5+"VND");
+            }
+        }
+    }
+
+    public void checkStatus(int id) {
+        for (StaffFullTime s: staffFullTimes) {
+            if (s.getId() == id) {
+                if (s.getStatus().equals("ON")) {
+                    System.out.println("Đang làm việc");
+                } else {
+                    System.out.println("Đã nghỉ");
+                }
+            }
         }
     }
 }

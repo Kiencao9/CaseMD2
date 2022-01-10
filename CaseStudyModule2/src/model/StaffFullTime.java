@@ -31,12 +31,12 @@ public class StaffFullTime extends Staff {
         this.dailySalary = dailySalary;
     }
 
-    public double salaryFullTime() {
-        return workingDay * dailySalary;
+    public double getPayFullTime() {
+        return getPayFullTime();
     }
 
     @Override
     public String toString() {
-        return "StaffFullTime" + super.toString();
+        return "StaffFullTime| " + super.toString();
     }
 }

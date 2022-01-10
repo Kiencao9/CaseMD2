@@ -71,7 +71,6 @@ public class ManagerAccount {
     }
 
     public void searchByName() {
-        System.out.println("Nhập tên tài khoản muốn tìm");
         String userName = ValidateAccount.validateUser();
         for (Account acc : accounts) {
             if(acc.getUserName().equals(userName)) {
@@ -108,7 +107,6 @@ public class ManagerAccount {
         String passWord = scanner.nextLine();
         return new Account(userName, passWord);
     }
-
 
 
 }

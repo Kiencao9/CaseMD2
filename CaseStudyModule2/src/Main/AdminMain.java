@@ -40,6 +40,11 @@ public class AdminMain {
                         System.out.println("*   12. Tìm kiếm nhân viên Part Time theo tên         *");
                         System.out.println("*   13. Sắp xếp nhân viên                             *");
                         System.out.println("*   14. Hiển thị nhân viên Full Time đang làm việc    *");
+                        System.out.println("*   15. Hiển thị nhân viên Part Time đang làm việc    *");
+                        System.out.println("*   15. Hiển thị tiền lương nhân viên Full Time       *");
+                        System.out.println("*   16. Hiển thị tiền lương nhân viên Part Time       *");
+                        System.out.println("*   17. Kiểm tra tình trạng nhân viên Full Time       *");
+                        System.out.println("*   18. Kiểm tra tình trạng nhân viên Part Time       *");
                         System.out.println("*    0. Quay lại                                      *");
                         System.out.println("*******************************************************");
                         choice2 = scanner.nextInt();
@@ -103,8 +108,6 @@ public class AdminMain {
                                     System.out.println("*             SẮP XẾP NHÂN VIÊN              *");
                                     System.out.println("* 1. Sắp xếp nhân viên Full Time theo tuổi   *");
                                     System.out.println("* 2. Sắp xếp nhân viên Part Time theo tuổi   *");
-                                    System.out.println("* 3. Sắp xếp nhân viên Full Time theo lương  *");
-                                    System.out.println("* 4. Sắp xếp nhân viên Part Time theo lương  *");
                                     System.out.println("* 0. Quay lại                                *");
                                     System.out.println("**********************************************");
                                     choice5 = scanner.nextInt();
@@ -121,6 +124,22 @@ public class AdminMain {
                             case 14:
                                 managerStaffFullTime.displayByStatusON();
                                 break;
+                            case 15:
+                                managerStaffFullTime.displayPayFullTime();
+                                break;
+                            case 16:
+                                managerStaffPartTime.displayPayPartTime();
+                                break;
+                            case 17:
+                                System.out.println("Nhập id NV muốn kiểm tra");
+                                int id17 = scanner.nextInt();
+                                managerStaffFullTime.checkStatus(id17);
+                                break;
+                            case 18:
+                                System.out.println("Nhập id NV muốn kiểm tra");
+                                int id18 = scanner.nextInt();
+                                managerStaffPartTime.checkStatus(id18);
+                                break;
                         }
                     } while (choice2 != 0);
                     break;
@@ -134,6 +153,7 @@ public class AdminMain {
                         System.out.println("* 3. Sửa tài khoản                *");
                         System.out.println("* 4. Xóa tài khoản                *");
                         System.out.println("* 5. Tìm kiếm tài khoản           *");
+                        System.out.println("* 0. Quay lại                     *");
                         System.out.println("***********************************");
                         choice3 = scanner.nextInt();
                         switch (choice3) {
